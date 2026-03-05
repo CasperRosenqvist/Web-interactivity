@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Esimerkki</title>
+</head>
+
+<body>
+    <p id="output"></p>
+
+
+    <script>
+        let ouput = document.getElementById("output");
+        console.log(output);
+        output.innerHTML = "JavaScriptillä luoto sisältö."
+
+
+        let x = myFunction(4, 3);
+        function myFunction(a, b) {
+            return a * b;
+        }
+        console.log(x);
+        let resultText = "Arvojen 4 ja 3 tulo on: " + myFunction(4, 3);
+        console.log(resultText)
+
+        const greetings = () => {
+            console.log("Moikka!");
+        };
+
+        greetings();
+
+
+        // EHTOLAUSEET
+        // IF-ELSE
+        function compare(a, b) {
+            if (a < b) {
+                console.log("a on pienempi kuin b.");
+            }
+            else if (a === b) {
+                console.log("a equals b.");
+            }
+            else {
+                console.log("a on suurempi kuin b.");
+            }
+        }
+
+        compare(2, 3);
+    </script>
+</body>
+
+</html>
