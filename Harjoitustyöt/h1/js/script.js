@@ -31,7 +31,7 @@ blockMessages[1] = "Salaperäinen voima estää liikkumisen tuohon suuntaan.";
 blockMessages[2] = "Vaikeakulkuinen pusikko estää liikkumisen.";
 blockMessages[3] = "Et pääse ohittamaan lohikäärmettä sitä kautta.";
 blockMessages[4] = "";
-blockMessages[5] = "Portti sulkeutui.";
+blockMessages[5] = "Portti on kiinni. Etene toiseen suuntaan";
 blockMessages[6] = "Joki on liian syvä ylitettäväksi.";
 blockMessages[7] = "Metsä on liian tiheä kuljettavaksi.";
 blockMessages[8] = "Olet liian peloissasi mennäksesi tuohon suuntaan.";
@@ -70,7 +70,7 @@ const actionsForPlayer = [
 ];
 let action = "";
 
-render();
+
 
 function clickHandler() {
     console.log("Nappia painettu");
@@ -169,7 +169,7 @@ function useItem() {
         gameMessage = "Sinulla ei ole sitä mukana";
     }
     if (backPack.length === 0) {
-        "Sinulla ei ole repussa mitään. "
+        gameMessage = "Sinulla ei ole repussa mitään. "
     }
 
     if (backPackIndexNumber !== -1) {
@@ -189,7 +189,7 @@ function useItem() {
                     dragonAlive = false;
                     gameMessage = "Heilautat miekkaa ja tapat lohikäärmeen! Vanha portti idässä avautuu..."
                 } else {
-                    gameMessage = "Heiluttelet meikkaasi tylsistyneenä..."
+                    gameMessage = "Heiluttelet miekkaasi tylsistyneenä..."
                 }
                 break;
 
@@ -226,6 +226,19 @@ function leaveItem() {
 }
 
 
+
+const minimapCells = document.querySelectorAll(".minimap div");
+
+function updateMinimap() {
+    for (let i = 0; i < minimapCells.length; i++) {
+        minimapCells[i].style.backgroundColor = "#3f5f3a";
+        minimapCells[i].style.color = "#000";
+    }
+    minimapCells[mapLocation].style.backgroundColor = "#2f8f2f";
+    minimapCells[mapLocation].style.color = "white";
+}
+
+
 function render() {
     //Päivitä kuva
     if (dragonAlive === false && mapLocation === 3) {
@@ -236,6 +249,7 @@ function render() {
         image.src = "images/" + images[mapLocation];
     }
 
+    updateMinimap();
 
     //päivitä sijainti näytöllä
     output.innerHTML = "<b>Sijaintisi on: </b>" + map[mapLocation];
@@ -258,3 +272,5 @@ function render() {
     console.log("Pelissä: " + items);
     console.log("Repussa: " + backPack);
 };
+
+render();

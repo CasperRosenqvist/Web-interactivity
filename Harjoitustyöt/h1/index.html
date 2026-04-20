@@ -13,24 +13,45 @@
 
         <div class="container-inner">
             <img id="image" src="" alt="">
+
+            <div class="minimap">
+                <div>Torni</div>
+                <div>Kaivo</div>
+                <div>Aukio</div>
+
+                <div>Lohikäärme</div>
+                <div>Polku</div>
+                <div>Portti</div>
+
+                <div>Joki</div>
+                <div>Penkki</div>
+                <div>Mökki</div>
+            </div>
+
             <input id="input" type="text" placeholder="Mitä haluat tehdä">
             <button id="button">Vastaa</button>
 
 
 
             <p id="output" class="output"></p>
-            <details>
-                <summary>Ohjeet</summary>
-                <p>
-                    <b>Peliohjeet</b><br>
-                    Tavoitteenasi on lyödä lohikäärme esineiden avulla joita löydät kartalta.<br><br>
+            <div class="instructions">
+                <details>
+                    <summary><b>Peliohjeet</b></summary>
+                    <p>
+                        <br>
+                        Tavoitteenasi on lyödä lohikäärme esineiden avulla joita löydät kartalta.<br><br>
+                    </p>
+                    <div class="command">
+                        <p>
+                            Liiku: pohjoinen, etelä, itä, länsi<br>
+                            Poimi esine: poimi + esineen nimi<br>
+                            Käytä esine: käytä + esineen nimi
+                        </p>
+                    </div>
 
-                    <span class="command">Liiku: pohjoinen, etelä, itä, länsi</span><br>
-                    <span class="command">Poimi esine: poimi + esineen nimi</span><br>
-                    <span class="command">Käytä esine: käytä + esineen nimi</span>
-                </p>
 
-            </details>
+                </details>
+            </div>
         </div>
 
     </div>

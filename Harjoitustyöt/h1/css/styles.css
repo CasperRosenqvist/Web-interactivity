@@ -1,11 +1,12 @@
 .output {
 	font-weight: bold;
+	margin-top: 10px;
 }
 
 body {
 	height: 100vh;
 	display: flex;
-	background-color: grey;
+	background-color: #1a1f1a;
 	justify-content: center;
 	align-items: center;
 	font-family: "Segoe UI", Tahoma, Arial, sans-serif;
@@ -27,6 +28,7 @@ body {
 
 p {
 	color: #fff;
+	margin: 0;
 }
 
 img {
@@ -65,4 +67,39 @@ summary {
 
 .command {
 	font-size: 70%;
+	margin: 0;
+}
+
+
+.minimap {
+	display: grid;
+	grid-template-columns: repeat(3, 80px);
+	grid-template-rows: repeat(3, 55px);
+	gap: 2px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 11px;
+	padding-left: 26px;
+
+}
+
+.minimap div {
+	border: 1px solid #333;
+	background: #eee;
+	text-align: center;
+	padding: 4px;
+	height: 55px;
+	/* must match grid row height */
+	line-height: 55px;
+	/* vertical centering */
+	padding: 0;
+	/* remove vertical padding */
+
+
+}
+
+.instructions {
+	font-size: 12px;
+	margin-bottom: 10px;
+	margin-top: 15px;
 }
